@@ -1,0 +1,20 @@
+# Compiled files
+*.pyc
+*.t7
+*.json
+*.ipynb_checkpoints
+*.caffemodel
+
+
+# Image Datasets
+data/images
+data/refcoco
+data/refclef
+data/refcoco+
+data/refcoco++
+
+# Cache
+cache
+
+
+
