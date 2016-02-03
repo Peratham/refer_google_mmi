@@ -33,9 +33,9 @@ model_id = params['model_id']
 split = params['split']
 
 # load refer and refToEvaluation
-ROOT_DIR = osp.abspath(osp.join(osp.dirname(__file__), '..', '..', '..', '..'))
-sys.path.insert(0, osp.join(ROOT_DIR, 'lib', 'datasets'))
-sys.path.insert(0, osp.join(ROOT_DIR, 'lib', 'evaluation'))
+ROOT_DIR = osp.abspath(osp.join(osp.dirname(__file__), '..'))
+sys.path.insert(0, osp.join(ROOT_DIR, 'pyutils', 'datasets'))
+sys.path.insert(0, osp.join(ROOT_DIR, 'pyutils', 'evaluation'))
 from refer import REFER
 from refEvaluation import RefEvaluation
 refer = REFER(dataset, splitBy = splitBy)

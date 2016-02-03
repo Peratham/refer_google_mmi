@@ -34,3 +34,13 @@ $ th train.lua -dataset refcoco_licheng -ranking_weight 2
 ```bash
 $ th train.lua -dataset refcoco_licheng -ranking_weight 2 -cnn_finetune 1
 ```
+
+## How to test
+- call eval_lang.lua to compute BLEU and CIDER scores
+```bash
+$ th eval_lang.lua -dataset refcoco_licheng -split testA
+```
+- call eval_box.lua to compute sent->box accuracy
+```bash
+$ th eval_box.lua -dataset refcoco_licheng -split testA
+```
