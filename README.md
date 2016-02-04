@@ -12,7 +12,7 @@ Besides we add "images/mscoco" into the "./data" folder.
 Download images from [mscoco](http://mscoco.org/dataset/#overview)
 
 ## Download my pretrained model:
-to be uploaded soon
+I release my trained baseline (model_id0) and mmi models (model_id10) for refcoco_licheng here, extract them into "./model" folder: http://tlberg.cs.unc.edu/licheng/referit/model/refcoco_licheng.zip
 
 ## How to train
 Firstly, we need to prepare data.json and data.h5 for each dataset_splitBy, e.g., refcoco_licheng, refcoco_google, etc.
@@ -29,7 +29,6 @@ Or we can call train.lua to learn the Max-Mutual Information model if you set ra
 ```bash
 $ th train.lua -dataset refcoco_licheng -ranking_weight 2
 ```
-I release my trained baseline (model_id0) and mmi models (model_id10) for refcoco_licheng here, extract them into "./model" folder: http://tlberg.cs.unc.edu/licheng/referit/model/refcoco_licheng.zip
 
 The above two calls only learn the jemb (joint_embedding) and LSTM parameters.
 Besides, if you want to finetune CNN as well, you can call
