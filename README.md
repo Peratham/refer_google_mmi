@@ -29,8 +29,7 @@ Or we can call train.lua to learn the Max-Mutual Information model if you set ra
 ```bash
 $ th train.lua -dataset refcoco_licheng -ranking_weight 2
 ```
-I release my trained baseline (model_id0) and mmi models (model_id10) for refcoco_licheng here:
-- http://tlberg.cs.unc.edu/licheng/referit/model/refcoco_licheng.zip
+I release my trained baseline (model_id0) and mmi models (model_id10) for refcoco_licheng here: http://tlberg.cs.unc.edu/licheng/referit/model/refcoco_licheng.zip
 
 The above two calls only learn the jemb (joint_embedding) and LSTM parameters.
 Besides, if you want to finetune CNN as well, you can call
