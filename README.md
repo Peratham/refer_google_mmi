@@ -2,11 +2,10 @@ Full implementation of google paper. More detailed description to be added soon.
 # refer_google_mmi
 
 ## Download
-Download my cleaned data from:
+Download my cleaned data and extract them into "./data" folder
 - 1) http://tlberg.cs.unc.edu/licheng/referit/data/refclef.zip
 - 2) http://tlberg.cs.unc.edu/licheng/referit/data/refcoco.zip
 - 3) http://tlberg.cs.unc.edu/licheng/referit/data/refcoco+.zip 
-and extract them into "./data" folder
 
 ## Prepare Images:
 Besides we add "images/mscoco" into the "./data" folder. 
@@ -16,26 +15,30 @@ Download images from [mscoco](http://mscoco.org/dataset/#overview)
 to be uploaded soon
 
 ## How to train
-call prepro.py to make data.json and data.h5
+Firstly, we need to prepare data.json and data.h5 for each dataset_splitBy, e.g., refcoco_licheng, refcoco_google, etc.
 ```bash
 $ python prepro.py -dataset refcoco -splitBy licheng -max_length 10
 ```
-call train.lua to learn the baseline model
+
+Next, we could call train.lua to learn the baseline model by setting ranking_weight as 0. That said, the ranking loss won't be effectively back-propagated.
 ```bash
 $ th train.lua -dataset refcoco_licheng -ranking_weight 0
 ```
 
-call train.lua to learn the Max-Mutual Information model
+Or we can call train.lua to learn the Max-Mutual Information model if you set ranking_weight greater than 0.
 ```bash
 $ th train.lua -dataset refcoco_licheng -ranking_weight 2
 ```
-You need to make sure the ranking_weight is greater than 0.
+I release my trained baseline (model_id0) and mmi models (model_id10) for refcoco_licheng here:
+- http://tlberg.cs.unc.edu/licheng/referit/model/refcoco_licheng.zip
 
-If you want to finetune CNN as well, call
+The above two calls only learn the jemb (joint_embedding) and LSTM parameters.
+Besides, if you want to finetune CNN as well, you can call
 ```bash
 $ th train.lua -dataset refcoco_licheng -ranking_weight 2 -cnn_finetune 1
 ```
-Also you could change the number of "finetune_jemb_after" to specify the number of iterations before finetuning CNN+joint_embedding layers.
+Also you could change "-finetune_jemb_after 20000" to specify after how many iterations would CNN finetuning begin.
+
 
 ## How to test
 call eval_lang.lua to compute BLEU, METEOR, and CIDER scores
