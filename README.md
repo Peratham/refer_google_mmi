@@ -1,5 +1,5 @@
-Full implementation of google paper. More detailed description to be added soon.
 # refer_google_mmi
+This code is the re-implementation of [Generation and Comprehension of Unambiguous Object Descriptions]http://arxiv.org/abs/1511.02283
 
 ## Download
 Download my cleaned data and extract them into "./data" folder
