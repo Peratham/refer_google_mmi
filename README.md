@@ -14,10 +14,13 @@ Download images from [mscoco](http://mscoco.org/dataset/#overview)
 ## Download my pretrained model:
 I release my trained baseline (model_id0) and mmi models (model_id10) for refcoco_licheng here, extract them into "./model" folder: http://tlberg.cs.unc.edu/licheng/referit/model/refcoco_licheng.zip
 
+## Prerequisites
+To use the code, you need to have skimage, h5py, scipy installed for python, and cunn, cudnn, cutorch, nn, nngraph, image, loadcaffe installed for Torch7.
+
 ## How to train
 Firstly, we need to prepare data.json and data.h5 for each dataset_splitBy, e.g., refcoco_licheng, refcoco_google, etc.
 ```bash
-$ python prepro.py -dataset refcoco -splitBy licheng -max_length 10
+$ python prepro.py --dataset refcoco --splitBy licheng --max_length 10
 ```
 
 Next, we could call train.lua to learn the baseline model by setting ranking_weight as 0. That said, the ranking loss won't be effectively back-propagated.
