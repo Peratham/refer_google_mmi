@@ -13,8 +13,7 @@ data/refclef
 data/refcoco+
 data/refcoco++
 
-# Cache
-
-
-
-
+# symlinks
+./data/images/saiapr_tc-12
+./data/images/mscoco
+./cache/data/refcoco_licheng
