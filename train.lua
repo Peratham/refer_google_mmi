@@ -211,7 +211,7 @@ local function eval_split(split, evalopt)
 	local verbose = utils.getopt(evalopt, 'verbose', true)
 	local val_images_use = utils.getopt(evalopt, 'val_images_use', true)
 
-	protos.cnn:evaluate()
+  protos.cnn:evaluate()
 	protos.jemb:evaluate()
 	protos.lm:evaluate()
 	loader:resetIterator(split)
@@ -222,7 +222,7 @@ local function eval_split(split, evalopt)
 	local vocab = loader:getVocab()
 	while true do
 		-- fetch a batch of data
-		local data = loader:getPosNegBatch({batch_size = opt.batch_size, split = split, seq_per_img = opt.seq_per_img})
+    local data = loader:getPosNegBatch({batch_size = opt.batch_size, split = split, seq_per_img = opt.seq_per_img})
 		local gimgs1, rimgs1, lfeats1 = net_utils.prepro(data.images, data.infos, 'pos_bbox', false, opt.gpuid >= 0)
 		local gimgs2, rimgs2, lfeats2 = net_utils.prepro(data.images, data.infos, 'neg_bbox', false, opt.gpuid >= 0)
 		local batch_size = gimgs1:size(1)
@@ -295,9 +295,11 @@ local function lossFun()
 		protos.cnn:evaluate()
 	end
   -- jemb mode
-  protos.jemb:training()
   if opt.finetune_jemb_after >= 0 and iter >= opt.finetune_jemb_after then
+    protos.jemb:training()
     jemb_grad_params:zero()
+  else
+    protos.jemb:evaluate()
   end
   -- lm mode
   protos.lm:training()
@@ -364,7 +366,6 @@ local function lossFun()
   local losses = { total_loss = loss }
   return losses
 end
-
 
 -------------------------------------------------------------------------------
 -- Main loop
