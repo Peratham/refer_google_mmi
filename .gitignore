@@ -13,6 +13,7 @@ data/refcoco
 data/refclef
 data/refcoco+
 data/refcoco++
+data/refgoogle
 
 # symlinks
 ./data/images/saiapr_tc-12
