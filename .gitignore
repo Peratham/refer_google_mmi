@@ -6,6 +6,7 @@
 *.ipynb_checkpoints
 *.caffemodel
 *.html
+*.p
 
 # Image Datasets
 data/images
