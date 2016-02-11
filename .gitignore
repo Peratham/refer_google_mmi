@@ -1,6 +1,7 @@
 # Compiled files
 *.pyc
 *.t7
+*.h5
 *.json
 *.ipynb_checkpoints
 *.caffemodel

@@ -287,9 +287,9 @@ loader:shuffle('train')
 local iter = 0
 
 local function lossFun()
-	-- cnn mode
-	if opt.cnn_finetune > 0 then
-		protos.cnn:training()
+  -- cnn mode
+  if opt.cnn_finetune > 0 then
+    protos.cnn:training()
 		cnn_grad_params:zero()
 	else
 		protos.cnn:evaluate()
