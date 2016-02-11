@@ -58,8 +58,10 @@ html_path = osp.join('cache/vis', dataset_splitBy, 'model_id'+str(model_id)+'_'+
 
 if dataset == 'refclef':
   url_root = 'http://tlberg.cs.unc.edu/vicente/refimages/'
-else:
+elif dataset in ['refcoco', 'refcoco+']:
   url_root = 'http://tlberg.cs.unc.edu/vicente/game-code-general/admin/imgs/'
+else:  # refcocoG
+  url_root = 'http://tlberg.cs.unc.edu/licheng/referit/refcocoG_imgs/'
 
 metrics = ['Bleu_1', 'Bleu_2', 'Bleu_3', 'Bleu_4', 'METEOR', 'ROUGE_L', 'CIDEr']
 num_per_page = 500

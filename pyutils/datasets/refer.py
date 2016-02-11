@@ -317,7 +317,7 @@ class REFER:
         # plt.show()
 
 if __name__ == '__main__':
-    refer = REFER('refcoco', splitBy='google')
+    refer = REFER('refclef', splitBy='licheng')
     # ann_ids = refer.getAnnIds(catIds=1)
     # print len(ann_ids)
     #
@@ -334,8 +334,10 @@ if __name__ == '__main__':
     # ref_id   = refer.getRefIds(catIds=1)[1]
     # ref      = refer.loadRefs(ref_id)[0]
     # refer.showRef(ref)
+    print len(refer.imgs)
+    print len(refer.imgToRefs)
 
-    ref_ids = refer.getRefIds(split='val')
+    ref_ids = refer.getRefIds(split='test')
     print 'There are %s test referred objects.' % len(ref_ids)
 
     for ref_id in refer.getRefIds(split='test'):

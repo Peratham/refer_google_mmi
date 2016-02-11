@@ -209,30 +209,30 @@ function computeLosses(input, seq)
   return losses
 end
 
--------------------------------------------------------------------------------
--- visualization tool that requires torch's opencv
--------------------------------------------------------------------------------
-local cv = require 'cv'
-require 'cv.imgcodecs'
-require 'cv.highgui'
-function convertFormat(ori_im)
-	local vgg_mean = torch.FloatTensor{123.68, 116.779, 103.939}:view(3,1,1):typeAs(ori_im)  -- in RGB order
-	local im = ori_im:clone()
-	im:add(1, vgg_mean:expandAs(im))
-	im = im:index(1, torch.LongTensor{3,2,1})  -- convert to Opencv's BGR order.
-	im = im:transpose(1,2):transpose(2,3)
-	im = im:byte()
-	return im
-end
-function visualize(gimgs, rimgs)
-	for i = 1, gimgs:size(1) do
-		gim, rim = gimgs[i], rimgs[i]
-		gim = convertFormat(gim)
-		rim = convertFormat(rim)
-		local twoimgs = torch.zeros(224, 448, 3):byte()
-		twoimgs[{ {}, {1, 224}, {} }] = gim
-		twoimgs[{ {}, {225, 448}, {} }] = rim
-		cv.imshow{'twoimgs', twoimgs}
-		cv.waitKey{delay=0}
-	end
-end
+-- -------------------------------------------------------------------------------
+-- -- visualization tool that requires torch's opencv
+-- -------------------------------------------------------------------------------
+-- local cv = require 'cv'
+-- require 'cv.imgcodecs'
+-- require 'cv.highgui'
+-- function convertFormat(ori_im)
+-- 	local vgg_mean = torch.FloatTensor{123.68, 116.779, 103.939}:view(3,1,1):typeAs(ori_im)  -- in RGB order
+-- 	local im = ori_im:clone()
+-- 	im:add(1, vgg_mean:expandAs(im))
+-- 	im = im:index(1, torch.LongTensor{3,2,1})  -- convert to Opencv's BGR order.
+-- 	im = im:transpose(1,2):transpose(2,3)
+-- 	im = im:byte()
+-- 	return im
+-- end
+-- function visualize(gimgs, rimgs)
+-- 	for i = 1, gimgs:size(1) do
+-- 		gim, rim = gimgs[i], rimgs[i]
+-- 		gim = convertFormat(gim)
+-- 		rim = convertFormat(rim)
+-- 		local twoimgs = torch.zeros(224, 448, 3):byte()
+-- 		twoimgs[{ {}, {1, 224}, {} }] = gim
+-- 		twoimgs[{ {}, {225, 448}, {} }] = rim
+-- 		cv.imshow{'twoimgs', twoimgs}
+-- 		cv.waitKey{delay=0}
+-- 	end
+-- end
