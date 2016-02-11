@@ -39,5 +39,5 @@ table.insert(model, {'fc7', nn.Linear(4096, 4096)})
 table.insert(model, {'relu7', cudnn.ReLU(true)})
 table.insert(model, {'drop7', nn.Dropout(0.500000)})
 table.insert(model, {'fc8', nn.Linear(4096, 1000)})
-table.insert(model, {'prob', nn.SoftMax()})
+table.insert(model, {'prob', cudnn.SoftMax()})
 return model

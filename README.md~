@@ -6,7 +6,7 @@ Download my cleaned data and extract them into "./data" folder
 - 1) http://tlberg.cs.unc.edu/licheng/referit/data/refclef.zip
 - 2) http://tlberg.cs.unc.edu/licheng/referit/data/refcoco.zip
 - 3) http://tlberg.cs.unc.edu/licheng/referit/data/refcoco+.zip 
-- 4) http://tlberg.cs.unc.edu/licheng/referit/data/refcocoG.zip 
+- 4) http://tlberg.cs.unc.edu/licheng/referit/data/refgoogle.zip 
 
 ## Prepare Images:
 Besides we add "images/mscoco" into the "./data" folder. 
