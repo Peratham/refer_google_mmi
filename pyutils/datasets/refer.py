@@ -51,9 +51,9 @@ class REFER:
         self.ROOT_DIR  = osp.abspath(osp.join(osp.dirname(__file__), '..', '..'))
         self.DATA_DIR  = osp.join(self.ROOT_DIR, 'data', dataset)
         self.CACHE_DIR = osp.join(self.ROOT_DIR, 'cache', dataset)
-        self.IMAGE_DIR = osp.join(self.ROOT_DIR, 'data', 'images', 'mscoco', 'images', 'train2014') if dataset in ['refcoco', 'refcoco+', 'refgoogle'] \
+        self.IMAGE_DIR = osp.join(self.ROOT_DIR, 'data', 'images', 'mscoco', 'images', 'train2014') if dataset in ['refcoco', 'refcoco+', 'refcocoG'] \
             else osp.join(self.ROOT_DIR, 'data', 'images', 'saiapr_tc-12')
-        self.PROPOSAL_DIR = osp.join(self.ROOT_DIR, 'data', 'images', 'mscoco', 'proposals', 'train2014') if dataset in ['refcoco', 'refcoco+', 'refgoogle'] \
+        self.PROPOSAL_DIR = osp.join(self.ROOT_DIR, 'data', 'images', 'mscoco', 'proposals', 'train2014') if dataset in ['refcoco', 'refcoco+', 'refcocoG'] \
             else None
 
         # load dataset
