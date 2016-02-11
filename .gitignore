@@ -15,6 +15,12 @@ data/refcoco+
 data/refclef
 data/refcocoG
 
+# cache
+cache/data
+cache/vis
+cache/box
+cache/lang
+
 # symlinks
 ./data/images/saiapr_tc-12
 ./data/images/mscoco
