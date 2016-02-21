@@ -384,7 +384,7 @@ while true do
   -- eval loss/gradient
   local losses = lossFun()
   if iter % opt.losses_log_every == 0 then loss_history[iter] = losses.total_loss end
-  print(string.format('iter %d: %f', iter, losses.total_loss))
+  print(string.format('dataset[%s], id[%s], gpuid[%s], iter %d: %f', opt.dataset, opt.id, opt.gpuid, iter, losses.total_loss))
 
   -- save checkpoint once in a while (or on final iteration)
   if (iter % opt.save_checkpoint_every == 0 or iter == opt.max_iters) then
