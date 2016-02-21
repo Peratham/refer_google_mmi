@@ -73,7 +73,6 @@ protos.expander = nn.FeatExpander(1)  -- each candidate box has only one testing
 protos.lm:createClones()  -- reconstruct cloens inside the language model
 if opt.gpuid >= 0 then for k,v in pairs(protos) do v:cuda() end end
 
-
 -------------------------------------------------------------------------------
 -- Create the Box Loader instance
 -------------------------------------------------------------------------------
@@ -107,9 +106,9 @@ while true do
 
 	-- print status
 	if opt.num_sents > 0 then 
-		print(string.format('Processing sent(%d/%d)', ix, opt.num_sents)) 
+		print(string.format('Processing sent(%d/%d) [%s]', ix, opt.num_sents, sent['sent'])) 
 	else 
-		print(string.format('Processing sent(%d/%d)', ix, loader:getNumSents{split = opt.split}))
+		print(string.format('Processing sent(%d/%d) [%s]', ix, loader:getNumSents{split = opt.split}, sent['sent']))
 	end
 	ix = ix+1
 

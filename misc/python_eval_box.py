@@ -60,6 +60,7 @@ def computeIoU(box1, box2):
 
 # compute accuracy
 acc = 0
+loss = 0
 for sent in predictions:
 	gd_bbox = sent['bbox']
 	pred_bbox = sent['pred_bbox']
@@ -67,6 +68,7 @@ for sent in predictions:
 	IoU = float(inter)/union
 	if IoU >= 0.5:
 		acc += 1
+	loss += sent['pred_loss']
 
 # print results
 print('\nHere is the sent->box result:')
@@ -75,6 +77,7 @@ print(' model_id: %s' % model_id)
 print(' split: %s' % split)
 print(' bboxes_type: %s' % boxes_type)
 print(' sents_type: %s' % sents_type)
+print(' average pred loss is %.4f' % (loss/float(len(predictions))))
 print(' sent->box accuracy is %.2f%%\n' % (acc*100.0/len(predictions)))
 
 

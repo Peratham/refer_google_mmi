@@ -35,7 +35,8 @@ function net_utils.build_cnn(cnn, opt)
     local cnns = nn.ParallelTable()
     cnns:add(cnn_part) 
     -- gcnn and rcnn are shared if no finetune is needed
-    if finetune == 1 then cnns:add(cnn_part:clone()) else cnns:add(cnn_part) end 
+    -- if finetune == 1 then cnns:add(cnn_part:clone()) else cnns:add(cnn_part) end 
+    cnns:add(cnn_part:clone())
     return cnns
 
   else

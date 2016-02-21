@@ -13,7 +13,7 @@ th train.lua -jemb_use_global 0 -id 11
 1's result:
 testA: bleu1 0.415, bleu2 0.241, bleu3 0.138, rouge 0.372, meteor 0.153, IoU 61.85%
 testB: bleu1 0.480, bleu2 0.286, bleu3 0.166, rouge 0.467, meteor 0.206, IoU 61.68%
-val:   bleu1 0.458, bleu2 0.275, bleu3 0.162, rouge 0.422, meteor 0.182, IoU 
+val:   bleu1 0.458, bleu2 0.275, bleu3 0.162, rouge 0.422, meteor 0.182, IoU 60.91%
 
 2's result:
 testA: bleu1 0.422, bleu2 0.260, bleu3 0.161, rouge 0.376, meteor 0.156
