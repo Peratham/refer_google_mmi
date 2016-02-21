@@ -15,6 +15,9 @@ data/refcoco+
 data/refclef
 data/refcocoG
 
+# job
+job
+
 # cache
 cache/data
 cache/vis
