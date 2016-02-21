@@ -26,3 +26,6 @@ cache/lang
 ./data/images/saiapr_tc-12
 ./data/images/mscoco
 ./cache/data/refcoco_licheng
+
+# jobs
+jobs/*
