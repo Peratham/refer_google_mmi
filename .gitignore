@@ -3,7 +3,6 @@
 *.t7
 *.h5
 *.json
-*.ipynb_checkpoints
 *.caffemodel
 *.html
 *.p
