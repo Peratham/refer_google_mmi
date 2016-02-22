@@ -1,12 +1,6 @@
 # refer_google_mmi
 This code is the re-implementation of [Generation and Comprehension of Unambiguous Object Descriptions](http://arxiv.org/abs/1511.02283)
 
-## Download
-Download my cleaned data and extract them into "./data" folder
-- 1) http://tlberg.cs.unc.edu/licheng/referit/data/refclef.zip
-- 2) http://tlberg.cs.unc.edu/licheng/referit/data/refcoco.zip
-- 3) http://tlberg.cs.unc.edu/licheng/referit/data/refcoco+.zip 
-- 4) http://tlberg.cs.unc.edu/licheng/referit/data/refcocoG.zip 
 
 ## Prepare Images:
 Besides we add "images/mscoco" into the "./data" folder. 
